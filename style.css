@@ -5,7 +5,7 @@
 body {
     margin: 0;
     display: grid;
-    grid-template-columns: 1.2fr 5fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 4fr;
     height: 100vh;
 }
@@ -19,7 +19,7 @@ body {
     grid-column: 1fr;
     grid-template-rows: 3em min-content min-content;
     gap: 3em;
-    font-size: calc(6px + 1.75vw);
+    font-size: calc(6px + 1.5vw);
     align-items: start;
     padding-left: 0.7em;
 }
@@ -27,6 +27,11 @@ body {
 #header {
     grid-row: 1;
     grid-column: 2;
+    display: grid;
+    grid-template-rows: auto auto;
+    background-color: white;
+    padding: 1em 3em 0.1em;
+    align-content: start;
 }
 
 #display {
@@ -77,4 +82,101 @@ body {
     align-content: center;
     align-items: center;
     gap: 1em;
+}
+
+#display {
+    background-color: hsl(214deg 32% 91%);
+}
+
+#search-row {
+    display: grid;
+    grid-template-columns: auto 1fr repeat(3, auto);
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+    gap: 16px;
+    --icon-size: 32px;
+}
+
+.profile-pic {
+   border-radius: 50%;
+   justify-self: center;
+}
+
+#search-bar {
+    width: 60%;
+    border-radius: 12px;
+    background-color: hsl(214deg 32% 91%);
+    border: none;
+    height: 32px;
+}
+
+#notification-icon {
+    justify-self: start;
+    margin-right: 20px;
+}
+
+#search-row p {
+    justify-self: end;
+    margin-left: 16px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#search-row input[type="image"]:not(.profile-pic),
+#search-row img[src$=".svg"]:not(.profile-pic) {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+#search-row .profile-pic {
+    width: calc(var(--icon-size) * 2);
+    height: calc(var(--icon-size) * 2);
+}
+
+#buttons-row {
+    display: grid;
+    grid-template-columns: auto 1fr repeat(3, auto);
+    gap: 20px;
+    align-content: center;
+    align-items:  center;
+}
+
+#buttons-row .profile-pic {
+    width: 96px;
+    height: 96px;
+}
+
+#buttons-row p {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+#buttons-row p span {
+    font-size: 20px;
+}
+
+#buttons-row button {
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 0.6em 1.8em;
+    background-color: hsl(201deg 79% 46%);
+    border-radius: 24px;
+    color: white;
+    border: none;
+}
+
+#buttons-row button:hover {
+    color: hsl(0, 0%, 95%);
+    cursor: pointer;
+    background-color: hsl(201deg 79% 62%);
+}
+
+#new-button {
+    margin-right: 18px;
+}
+
+#share-button {
+    margin-left: 18px;
 }
